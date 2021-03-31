@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tidy_my_gallery/widgets/image-folder-picker.dart';
 
 class SortingSection extends StatelessWidget {
   final String title;
   final Widget Switch;
+  final Widget ImageFolderPicker;
   final Icon icon;
-  final String selectedFolder;
 
   SortingSection({
     @required this.title,
     this.icon,
-    this.selectedFolder = '',
+    @required this.ImageFolderPicker,
     @required this.Switch,
   }) {}
 
@@ -36,12 +35,7 @@ class SortingSection extends StatelessWidget {
               icon,
           ],
         ),
-        ImageFolderPicker(
-            title: 'Image Folder',
-            subtitle: selectedFolder.isEmpty == true ?
-            'Select folder where $title images should go' :
-            selectedFolder
-        ),
+        ImageFolderPicker,
         Switch,
       ],
     );

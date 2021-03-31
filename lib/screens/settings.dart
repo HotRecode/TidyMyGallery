@@ -21,7 +21,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     _data = SettingsService.create();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return FutureBuilder<SettingsService>(
@@ -73,8 +72,13 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               Icons.favorite,
               color: Colors.red,
             ),
-            selectedFolder: _settings.loveFolder,
-            Switch: CopyOrMoveSwitch(Key('loveImagesSwitch'),
+            ImageFolderPicker: ImageFolderPicker(
+              subtitle: _settings.loveFolder.isEmpty == true
+                  ? 'Select folder where Love images should go'
+                  : _settings.loveFolder,
+            ),
+            Switch: CopyOrMoveSwitch(
+              Key('loveImagesSwitch'),
               moveImageToFolder: _settings.loveImagesMoveToFolder,
               onChange: (bool value) {
                 var updatedSetting = Settings.update(
@@ -97,8 +101,8 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               Icons.thumb_up,
               color: Colors.blue,
             ),
-            selectedFolder: _settings.likeFolder,
-            Switch: CopyOrMoveSwitch(Key('likeImagesSwitch'),
+            Switch: CopyOrMoveSwitch(
+              Key('likeImagesSwitch'),
               moveImageToFolder: _settings.likeImagesMoveToFolder,
               onChange: (bool value) {
                 var updatedSetting = Settings.update(
@@ -111,30 +115,40 @@ Widget settingsScaffold(SettingsService service, Function setState) {
                 });
               },
             ),
+            ImageFolderPicker: ImageFolderPicker(
+              subtitle: _settings.likeFolder.isEmpty == true
+                  ? 'Select folder where Like images should go'
+                  : _settings.likeFolder,
+            ),
           ),
           SizedBox(
             height: 20,
           ),
           SortingSection(
-              title: 'Remove',
-              icon: Icon(
-                Icons.delete_forever,
-                color: Colors.grey,
-              ),
-              selectedFolder: _settings.deleteFolder,
-              Switch: HardDeleteSwitch(Key('hardDelete'),
-                hardDelete: _settings.hardDelete,
-                onChange: (bool value) {
-                  var updatedSetting = Settings.update(
-                    _settings,
-                    hardDelete: value,
-                  );
-                  service.updateSettings(updatedSetting);
-                  setState(() {
-                    _settings = updatedSetting;
-                  });
-                },
-              )
+            title: 'Remove',
+            icon: Icon(
+              Icons.delete_forever,
+              color: Colors.grey,
+            ),
+            Switch: HardDeleteSwitch(
+              Key('hardDelete'),
+              hardDelete: _settings.hardDelete,
+              onChange: (bool value) {
+                var updatedSetting = Settings.update(
+                  _settings,
+                  hardDelete: value,
+                );
+                service.updateSettings(updatedSetting);
+                setState(() {
+                  _settings = updatedSetting;
+                });
+              },
+            ),
+            ImageFolderPicker: ImageFolderPicker(
+              subtitle: _settings.deleteFolder.isEmpty == true
+                  ? 'Select folder where deleted images should go'
+                  : _settings.deleteFolder,
+            ),
           ),
         ],
       ),
