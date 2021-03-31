@@ -25,16 +25,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return FutureBuilder<SettingsService>(
         future: _data,
-        builder: (BuildContext context, AsyncSnapshot<SettingsService> snapshot) {
-            if (!snapshot.hasData)
-              return loadingIndicator();
-            else
-              return settingsScaffold(snapshot.data, setState);
-        }
-    );
+        builder:
+            (BuildContext context, AsyncSnapshot<SettingsService> snapshot) {
+          if (!snapshot.hasData)
+            return loadingIndicator();
+          else
+            return settingsScaffold(snapshot.data, setState);
+        });
   }
 }
-
 
 Widget settingsScaffold(SettingsService service, Function setState) {
   Settings _settings = service.getSettings();
@@ -51,13 +50,15 @@ Widget settingsScaffold(SettingsService service, Function setState) {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           ImageFolderPicker(
-            title: 'Image Folder',
-            subtitle: _settings.tinyUpFolder.isEmpty == true ? 'Select a folder to tidy up' : _settings.tinyUpFolder,
+            subtitle: _settings.tinyUpFolder.isEmpty == true
+                ? 'Select a folder to tidy up'
+                : _settings.tinyUpFolder,
           ),
           SizedBox(
             height: 30,
           ),
-          Text('Sorting Sections',
+          Text(
+            'Sorting Sections',
             style: TextStyle(
               color: Colors.white,
               fontSize: 22,
