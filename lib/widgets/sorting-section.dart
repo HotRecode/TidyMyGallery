@@ -38,6 +38,7 @@ class SortingSection extends StatelessWidget {
             title: 'Image Folder',
             subtitle: 'Select folder where $title images should go'
         ),
+        Switch,
       ],
     );
   }

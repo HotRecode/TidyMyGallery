@@ -8,6 +8,7 @@ class CopyOrMoveSwitch extends StatelessWidget {
         'Copy or move image',
         style: TextStyle(
           color: Colors.white,
+          fontSize: 16,
         ),
       ),
       subtitle: Text(
@@ -18,6 +19,7 @@ class CopyOrMoveSwitch extends StatelessWidget {
       ),
       value: false,
       onChanged: (bool value) {},
+      contentPadding: EdgeInsets.symmetric(horizontal: 0),
     );
   }
 }

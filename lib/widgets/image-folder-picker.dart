@@ -16,7 +16,7 @@ class ImageFolderPicker extends StatelessWidget {
             Text(this.title,
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 18,
+                fontSize: 16,
               ),
             ),
             Text(this.subtitle,

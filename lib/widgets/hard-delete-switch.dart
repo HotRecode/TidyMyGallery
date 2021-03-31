@@ -8,6 +8,7 @@ class HardDeleteSwitch extends StatelessWidget {
         'Hard delete',
         style: TextStyle(
           color: Colors.white,
+          fontSize: 16,
         ),
       ),
       subtitle: Text(
@@ -22,6 +23,7 @@ class HardDeleteSwitch extends StatelessWidget {
         Icons.warning_rounded,
         color: Colors.red,
       ),
+      contentPadding: EdgeInsets.symmetric(horizontal: 0),
     );
   }
 }
