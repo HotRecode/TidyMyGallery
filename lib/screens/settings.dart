@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:tidy_my_gallery/models/settings.dart';
 import 'package:tidy_my_gallery/widgets/copy-or-move-switch.dart';
 import 'package:tidy_my_gallery/widgets/hard-delete-switch.dart';
 import 'package:tidy_my_gallery/widgets/image-folder-picker.dart';
 import 'package:tidy_my_gallery/widgets/sorting-section.dart';
 
-class Settings extends StatefulWidget {
+class SettingsScreen extends StatefulWidget {
   @override
-  _SettingsState createState() => _SettingsState();
+  _SettingsScreenState createState() => _SettingsScreenState();
 }
 
-class _SettingsState extends State<Settings> {
+class _SettingsScreenState extends State<SettingsScreen> {
+  Settings _settings = Settings();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
