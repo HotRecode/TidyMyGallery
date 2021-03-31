@@ -9,7 +9,7 @@ class SettingsService {
   static Future<SettingsService> create() async {
     var service = SettingsService();
     service.prefs = await SharedPreferences.getInstance();
-    return service;
+    return Future.value(service);
   }
 
   Settings getSettings() {
