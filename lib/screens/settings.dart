@@ -53,6 +53,16 @@ Widget settingsScaffold(SettingsService service, Function setState) {
             subtitle: _settings.tinyUpFolder.isEmpty == true
                 ? 'Select a folder to tidy up'
                 : _settings.tinyUpFolder,
+            onFolderSelected: (String path) {
+              var updatedSetting = Settings.update(
+                _settings,
+                tinyUpFolder: path,
+              );
+              service.updateSettings(updatedSetting);
+              setState(() {
+                _settings = updatedSetting;
+              });
+            },
           ),
           SizedBox(
             height: 30,
@@ -77,6 +87,16 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               subtitle: _settings.loveFolder.isEmpty == true
                   ? 'Select folder where Love images should go'
                   : _settings.loveFolder,
+              onFolderSelected: (String path) {
+                var updatedSetting = Settings.update(
+                  _settings,
+                  loveFolder: path,
+                );
+                service.updateSettings(updatedSetting);
+                setState(() {
+                  _settings = updatedSetting;
+                });
+              },
             ),
             Switch: CopyOrMoveSwitch(
               Key('loveImagesSwitch'),
@@ -120,6 +140,16 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               subtitle: _settings.likeFolder.isEmpty == true
                   ? 'Select folder where Like images should go'
                   : _settings.likeFolder,
+              onFolderSelected: (String path) {
+                var updatedSetting = Settings.update(
+                  _settings,
+                  likeFolder: path,
+                );
+                service.updateSettings(updatedSetting);
+                setState(() {
+                  _settings = updatedSetting;
+                });
+              },
             ),
           ),
           SizedBox(
@@ -149,6 +179,16 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               subtitle: _settings.deleteFolder.isEmpty == true
                   ? 'Select folder where deleted images should go'
                   : _settings.deleteFolder,
+              onFolderSelected: (String path) {
+                var updatedSetting = Settings.update(
+                  _settings,
+                  deleteFolder: path,
+                );
+                service.updateSettings(updatedSetting);
+                setState(() {
+                  _settings = updatedSetting;
+                });
+              },
             ),
           ),
         ],

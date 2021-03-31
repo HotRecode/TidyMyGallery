@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.hotrecode.tidy_my_gallery">
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
    <application
         android:label="tidy_my_gallery"
         android:icon="@mipmap/ic_launcher">
