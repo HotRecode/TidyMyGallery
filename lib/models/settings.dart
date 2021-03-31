@@ -19,4 +19,22 @@ class Settings {
     this.likeImagesMoveToFolder = false,
     this.hardDelete = false,
   }) {}
+
+  Settings.update(Settings base, {
+    String tinyUpFolder,
+    String loveFolder,
+    String likeFolder,
+    String deleteFolder,
+    bool loveImagesMoveToFolder,
+    bool likeImagesMoveToFolder,
+    bool hardDelete,
+  }) : this(
+      tinyUpFolder: tinyUpFolder ?? base.tinyUpFolder,
+      loveFolder: loveFolder ?? base.loveFolder,
+      likeFolder: likeFolder ?? base.likeFolder,
+      deleteFolder: deleteFolder ?? base.deleteFolder,
+      loveImagesMoveToFolder: loveImagesMoveToFolder ?? base.loveImagesMoveToFolder,
+      likeImagesMoveToFolder: likeImagesMoveToFolder ?? base.likeImagesMoveToFolder,
+      hardDelete: hardDelete ?? base.hardDelete,
+  );
 }
