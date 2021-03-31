@@ -73,6 +73,7 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               Icons.favorite,
               color: Colors.red,
             ),
+            selectedFolder: _settings.loveFolder,
             Switch: CopyOrMoveSwitch(Key('loveImagesSwitch'),
               moveImageToFolder: _settings.loveImagesMoveToFolder,
               onChange: (bool value) {
@@ -96,6 +97,7 @@ Widget settingsScaffold(SettingsService service, Function setState) {
               Icons.thumb_up,
               color: Colors.blue,
             ),
+            selectedFolder: _settings.likeFolder,
             Switch: CopyOrMoveSwitch(Key('likeImagesSwitch'),
               moveImageToFolder: _settings.likeImagesMoveToFolder,
               onChange: (bool value) {
@@ -119,6 +121,7 @@ Widget settingsScaffold(SettingsService service, Function setState) {
                 Icons.delete_forever,
                 color: Colors.grey,
               ),
+              selectedFolder: _settings.deleteFolder,
               Switch: HardDeleteSwitch(Key('hardDelete'),
                 hardDelete: _settings.hardDelete,
                 onChange: (bool value) {

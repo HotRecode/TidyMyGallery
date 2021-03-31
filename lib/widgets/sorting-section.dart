@@ -6,10 +6,12 @@ class SortingSection extends StatelessWidget {
   final String title;
   final Widget Switch;
   final Icon icon;
+  final String selectedFolder;
 
   SortingSection({
     @required this.title,
     this.icon,
+    this.selectedFolder = '',
     @required this.Switch,
   }) {}
 
@@ -36,7 +38,9 @@ class SortingSection extends StatelessWidget {
         ),
         ImageFolderPicker(
             title: 'Image Folder',
-            subtitle: 'Select folder where $title images should go'
+            subtitle: selectedFolder.isEmpty == true ?
+            'Select folder where $title images should go' :
+            selectedFolder
         ),
         Switch,
       ],
