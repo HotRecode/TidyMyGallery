@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ImageFolderPicker extends StatelessWidget {
-  final String title;
   final String subtitle;
-  ImageFolderPicker({@required this.title, @required this.subtitle}) {}
+  ImageFolderPicker({@required this.subtitle}) {}
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +12,7 @@ class ImageFolderPicker extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(this.title,
+            Text('Image folder',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 16,
