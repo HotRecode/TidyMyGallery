@@ -74,7 +74,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ),
               Switch: HardDeleteSwitch()
             ),
-            HardDeleteSwitch(),
           ],
         ),
       ),
