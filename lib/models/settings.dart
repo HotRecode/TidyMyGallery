@@ -11,10 +11,10 @@ class Settings {
   final bool hardDelete;
 
   Settings({
-    this.tinyUpFolder,
-    this.loveFolder,
-    this.likeFolder,
-    this.deleteFolder,
+    this.tinyUpFolder = '',
+    this.loveFolder = '',
+    this.likeFolder = '',
+    this.deleteFolder = '',
     this.loveImagesMoveToFolder = false,
     this.likeImagesMoveToFolder = false,
     this.hardDelete = false,
