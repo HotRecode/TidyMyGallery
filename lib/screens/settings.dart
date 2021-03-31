@@ -67,7 +67,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               height: 20,
             ),
             SortingSection(
-              title: 'Soft Remove',
+              title: 'Remove',
               icon: Icon(
                 Icons.delete_forever,
                 color: Colors.grey,
