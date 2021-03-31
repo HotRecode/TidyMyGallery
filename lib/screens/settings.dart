@@ -50,7 +50,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   Icons.favorite,
                   color: Colors.red,
               ),
-              Switch: CopyOrMoveSwitch(),
+              Switch: CopyOrMoveSwitch(Key('loveImagesSwitch'),
+                moveImageToFolder: _settings.loveImagesMoveToFolder,
+                onChange: (bool value) {
+                  setState(() {
+                    _settings = Settings.update(
+                        _settings,
+                        loveImagesMoveToFolder: value,
+                    );
+                  });
+                },
+              ),
             ),
             SizedBox(
               height: 20,
@@ -61,7 +71,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Icons.thumb_up,
                 color: Colors.blue,
               ),
-              Switch: CopyOrMoveSwitch(),
+              Switch: CopyOrMoveSwitch(Key('likeImagesSwitch'),
+                moveImageToFolder: _settings.likeImagesMoveToFolder,
+                onChange: (bool value) {
+                  setState(() {
+                    _settings = Settings.update(
+                      _settings,
+                      likeImagesMoveToFolder: value,
+                    );
+                  });
+                },
+              ),
             ),
             SizedBox(
               height: 20,
@@ -72,7 +92,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 Icons.delete_forever,
                 color: Colors.grey,
               ),
-              Switch: HardDeleteSwitch()
+              Switch: HardDeleteSwitch(Key('hardDelete'),
+                hardDelete: _settings.hardDelete,
+                onChange: (bool value) {
+                  setState(() {
+                    _settings = Settings.update(
+                      _settings,
+                      hardDelete: value,
+                    );
+                  });
+                },
+              )
             ),
           ],
         ),
